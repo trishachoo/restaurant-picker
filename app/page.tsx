@@ -102,8 +102,8 @@ export default function FilterPage() {
         >
           {/* Floating top bar */}
           <div className="flex items-center justify-between px-6 pt-6 pb-2">
-            <span className="font-bold text-sm text-black tracking-tight">kev and trish&apos;s restaurant picker</span>
-            <div className="flex items-center gap-4">
+            <span className="font-bold text-sm text-black tracking-tight truncate min-w-0 mr-4">kev and trish&apos;s restaurant picker</span>
+            <div className="flex items-center gap-4 flex-shrink-0">
               <Link href="/edit" className="text-xs font-bold uppercase tracking-widest text-black/50 hover:text-black transition-colors">edit</Link>
               <Link href="/add" className="text-xs font-bold uppercase tracking-widest text-black/70 hover:text-black transition-colors">+ add</Link>
             </div>
@@ -112,6 +112,7 @@ export default function FilterPage() {
           {/* Centered content */}
           <div className="flex-1 overflow-y-auto px-6 min-h-0 flex flex-col">
             <div className="flex flex-col items-center gap-5 w-full max-w-sm md:max-w-2xl mx-auto my-auto py-8">
+              <p className="text-5xl">🍔</p>
               <h1 className="text-4xl md:text-5xl font-bold text-black leading-tight text-center">
                 what are you<br />craving today?
               </h1>
@@ -198,6 +199,24 @@ export default function FilterPage() {
                 where in<br />singapore?
               </h1>
 
+              {/* Filtered count — shown above pills so it's visible without scrolling */}
+              <AnimatePresence>
+                {filteredCount !== null && (
+                  <motion.p
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    className="text-center font-bold"
+                  >
+                    {filteredCount === 0 ? (
+                      <span className="text-white text-sm">no matches — try different filters</span>
+                    ) : (
+                      <><span className="text-white text-3xl">{filteredCount}</span><span className="text-white/70 text-sm"> places to swipe</span></>
+                    )}
+                  </motion.p>
+                )}
+              </AnimatePresence>
+
               <ScrollSelector
                 multiSelect
                 maxSelect={2}
@@ -233,15 +252,6 @@ export default function FilterPage() {
                   exit={{ opacity: 0, y: 16 }}
                   className="w-full max-w-sm mx-auto space-y-3"
                 >
-                  {filteredCount !== null && (
-                    <p className="text-center text-white/80 text-sm font-bold">
-                      {filteredCount === 0 ? (
-                        <span className="text-white">no matches — try different filters</span>
-                      ) : (
-                        <><span className="text-white text-xl">{filteredCount}</span> places to swipe</>
-                      )}
-                    </p>
-                  )}
                   <button
                     onClick={handleStart}
                     disabled={filteredCount === 0}

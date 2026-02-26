@@ -112,6 +112,11 @@ function SwipeContent() {
           </div>
         </div>
 
+        {/* Swipe hint */}
+        <p className="text-center text-xs text-muted-foreground font-bold uppercase tracking-widest mb-3">
+          ← swipe left or right →
+        </p>
+
         {/* Card — fills remaining space on mobile, 9:16 on desktop */}
         <div className="relative w-full flex-1 min-h-0 md:flex-none md:aspect-[9/16]">
           <AnimatePresence>

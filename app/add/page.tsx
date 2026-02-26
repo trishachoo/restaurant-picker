@@ -15,7 +15,7 @@ export default function AddPage() {
   const [area, setArea] = useState("");
   const [notes, setNotes] = useState("");
   const [addedBy, setAddedBy] = useState("");
-  const [sourceType, setSourceType] = useState<"favorites" | "wantToGo">("wantToGo");
+  const [sourceType, setSourceType] = useState<"favorites" | "wantToGo">("favorites");
   const [saved, setSaved] = useState(false);
 
   function handleSubmit(e: React.FormEvent) {
@@ -72,6 +72,27 @@ export default function AddPage() {
             />
           </div>
 
+          {/* Tag */}
+          <div className="space-y-2">
+            <label className="text-xs font-bold uppercase tracking-widest text-white/70">Tag as *</label>
+            <div className="flex gap-3">
+              {(["favorites", "wantToGo"] as const).map((src) => (
+                <button
+                  key={src}
+                  type="button"
+                  onClick={() => setSourceType(src)}
+                  className={`flex-1 py-3 rounded-2xl font-bold text-sm transition-all ${
+                    sourceType === src
+                      ? "bg-white text-[#9747FF]"
+                      : "bg-white/15 text-white border-2 border-white/30"
+                  }`}
+                >
+                  {src === "favorites" ? "favourite" : "want to go"}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Cuisine */}
           <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-widest text-white/70">Cuisine *</label>
@@ -116,27 +137,6 @@ export default function AddPage() {
               placeholder="e.g. Book ahead, try the omakase"
               className={`${inputClass} resize-none`}
             />
-          </div>
-
-          {/* Tag */}
-          <div className="space-y-2">
-            <label className="text-xs font-bold uppercase tracking-widest text-white/70">Tag as *</label>
-            <div className="flex gap-3">
-              {(["favorites", "wantToGo"] as const).map((src) => (
-                <button
-                  key={src}
-                  type="button"
-                  onClick={() => setSourceType(src)}
-                  className={`flex-1 py-3 rounded-2xl font-bold text-sm transition-all ${
-                    sourceType === src
-                      ? "bg-white text-[#9747FF]"
-                      : "bg-white/15 text-white border-2 border-white/30"
-                  }`}
-                >
-                  {src === "favorites" ? "favourite" : "want to go"}
-                </button>
-              ))}
-            </div>
           </div>
 
           {/* Added by */}
