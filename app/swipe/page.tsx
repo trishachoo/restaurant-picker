@@ -51,7 +51,7 @@ function SwipeContent() {
 
   if (showTransition) {
     return (
-      <div className="bg-[#00CFFD] min-h-screen w-full flex flex-col items-center justify-center px-6 text-center">
+      <div className="bg-[#00CFFD] h-dvh overflow-hidden w-full flex flex-col items-center justify-center px-6 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -91,7 +91,7 @@ function SwipeContent() {
   const progress = currentIndex / restaurants.length;
 
   return (
-    <div className="min-h-screen w-full bg-background flex flex-col md:items-center md:justify-center">
+    <div className="h-dvh overflow-hidden w-full bg-background flex flex-col md:items-center md:justify-center">
       <div className="w-full max-w-sm mx-auto px-5 pt-8 pb-8 flex flex-col flex-1 md:flex-none">
 
         {/* Header */}
