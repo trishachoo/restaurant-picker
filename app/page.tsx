@@ -40,7 +40,7 @@ export default function FilterPage() {
         const cached = localStorage.getItem(CACHE_KEY);
         if (cached) {
           const { restaurants, timestamp } = JSON.parse(cached);
-          if (Date.now() - timestamp < CACHE_TTL) {
+          if (Date.now() - timestamp < CACHE_TTL && restaurants.length > 0) {
             setAllRestaurants(restaurants);
             setLoading(false);
             return;
