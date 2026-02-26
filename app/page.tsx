@@ -102,7 +102,7 @@ export default function FilterPage() {
         >
           {/* Floating top bar */}
           <div className="flex items-center justify-between px-6 pt-6 pb-2">
-            <span className="font-bold text-sm text-black tracking-tight truncate min-w-0 mr-4">kev and trish&apos;s restaurant picker</span>
+            <span className="font-bold text-xs text-black tracking-tight min-w-0 mr-4">kev and trish&apos;s restaurant picker</span>
             <div className="flex items-center gap-4 flex-shrink-0">
               <Link href="/edit" className="text-xs font-bold uppercase tracking-widest text-black/50 hover:text-black transition-colors">edit</Link>
               <Link href="/add" className="text-xs font-bold uppercase tracking-widest text-black/70 hover:text-black transition-colors">+ add</Link>
