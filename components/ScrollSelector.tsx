@@ -75,7 +75,7 @@ export default function ScrollSelector(props: ScrollSelectorProps) {
             whileTap={{ scale: 0.93 }}
             onClick={() => handleClick(option)}
             className={cn(
-              "px-4 py-2 rounded-full text-sm font-bold border-2 transition-all duration-150 lowercase",
+              "px-4 py-2 rounded-full text-sm font-bold border-2 transition-all duration-150 lowercase touch-manipulation",
               selected
                 ? "bg-black text-white border-black shadow-md"
                 : "bg-white text-black border-black hover:bg-black/5"

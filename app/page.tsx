@@ -110,9 +110,9 @@ export default function FilterPage() {
           </div>
 
           {/* Centered content */}
-          <div className="flex-1 flex flex-col items-center justify-center px-6 gap-5">
-            <div className="w-full max-w-sm md:max-w-2xl flex flex-col items-center">
-              <h1 className="text-5xl font-bold text-black leading-tight mb-5 text-center">
+          <div className="flex-1 overflow-y-auto px-6 min-h-0 flex flex-col">
+            <div className="flex flex-col items-center gap-5 w-full max-w-sm md:max-w-2xl mx-auto my-auto py-8">
+              <h1 className="text-4xl md:text-5xl font-bold text-black leading-tight text-center">
                 what are you<br />craving today?
               </h1>
 
@@ -132,7 +132,7 @@ export default function FilterPage() {
                     initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 6 }}
-                    className="mt-3 text-xs font-bold text-black/60 uppercase tracking-widest"
+                    className="text-xs font-bold text-black/60 uppercase tracking-widest"
                   >
                     {cuisineCount} / 3 max
                   </motion.p>
@@ -140,7 +140,7 @@ export default function FilterPage() {
               </AnimatePresence>
 
               {loading && (
-                <div className="flex items-center gap-2 text-black/50 text-xs mt-3">
+                <div className="flex items-center gap-2 text-black/50 text-xs">
                   <Loader2 size={12} className="animate-spin" />
                   fetching your list...
                 </div>
@@ -192,9 +192,9 @@ export default function FilterPage() {
           </div>
 
           {/* Centered content */}
-          <div className="flex-1 flex flex-col items-center justify-center px-6 gap-5">
-            <div className="w-full max-w-sm md:max-w-2xl flex flex-col items-center">
-              <h1 className="text-5xl font-bold text-white leading-tight mb-5 text-center">
+          <div className="flex-1 overflow-y-auto px-6 min-h-0 flex flex-col">
+            <div className="flex flex-col items-center gap-5 w-full max-w-sm md:max-w-2xl mx-auto my-auto py-8">
+              <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight text-center">
                 where in<br />singapore?
               </h1>
 
@@ -214,7 +214,7 @@ export default function FilterPage() {
                     initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 6 }}
-                    className="mt-3 text-xs font-bold text-white/70 uppercase tracking-widest"
+                    className="text-xs font-bold text-white/70 uppercase tracking-widest"
                   >
                     {areaCount} / 2 max
                   </motion.p>

@@ -92,7 +92,7 @@ function SwipeContent() {
 
   return (
     <div className="min-h-screen w-full bg-background flex flex-col md:items-center md:justify-center">
-      <div className="w-full max-w-sm mx-auto px-5 pt-8 pb-8">
+      <div className="w-full max-w-sm mx-auto px-5 pt-8 pb-8 flex flex-col flex-1 md:flex-none">
 
         {/* Header */}
         <div className="space-y-3 mb-4">
@@ -112,8 +112,8 @@ function SwipeContent() {
           </div>
         </div>
 
-        {/* 9:16 card */}
-        <div className="relative w-full aspect-[9/16]">
+        {/* Card — fills remaining space on mobile, 9:16 on desktop */}
+        <div className="relative w-full flex-1 min-h-0 md:flex-none md:aspect-[9/16]">
           <AnimatePresence>
             {next && <RestaurantCard key={next.id} restaurant={next} onSwipe={() => {}} isTop={false} bgColor={cardBg} />}
             {current && (
